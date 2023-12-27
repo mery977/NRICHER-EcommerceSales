@@ -28,7 +28,7 @@ def recategoriser_lignes(df):
 #recategoriser_lignes(df)
 
 # Fonction pour extraire dimensions et couleurs
-df.to_csv(r'C:\Users\ADMIN\Desktop\PROJECTS\NRICHER_PROJECTS\NouveauFichier.csv', index=False, encoding='latin-1', sep=';')
+df.to_csv(r'C:\Users\ADMIN\Desktop\PROJECTS\NRICHER_PROJECTS\NouveauFichier-recategorisation.csv', index=False, encoding='latin-1', sep=';')
 
 # Fonction pour extraire dimensions et couleurs
 def extraire_dimensions_couleurs(description):
@@ -56,7 +56,7 @@ recategoriser_lignes(df)
 # Appliquer l'extraction des dimensions et couleurs
 df[['Dimensions', 'Couleurs']] = df['Libellé produit'].apply(extraire_dimensions_couleurs).apply(pd.Series)
 
-df.to_csv(r'C:\Users\ADMIN\Desktop\PROJECTS\NRICHER_PROJECTS\Nouveaux.csv', index=False, encoding='latin-1', sep=';')
+df.to_csv(r'C:\Users\ADMIN\Desktop\PROJECTS\NRICHER_PROJECTS\Nouveaux-dimensions-couleurs.csv', index=False, encoding='latin-1', sep=';')
 
 # Remplacer les valeurs manquantes dans la colonne 'Nature' par une chaîne vide
 df['Nature'] = df['Nature'].fillna('')
